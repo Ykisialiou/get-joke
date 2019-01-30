@@ -1,0 +1,24 @@
+{
+  "name": "get-joke",
+  "version": "1.0.0",
+  "description": "get-joke simple funtion for pks/riff",
+  "main": "get-joke.js",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ykisialiou/get-joke.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ykisialiou/get-joke/issues"
+  },
+  "homepage": "https://github.com/Ykisialiou/get-joke#readme"
+}
