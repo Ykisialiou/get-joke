@@ -5,7 +5,7 @@ const axios = require("axios")
 
 // input and output URI 
 const jokeApiUri = "http://api.icndb.com/jokes/random"
-const processUri = process.env['TARGET_URL'] || 'http://hello.default.svc.cluster.local'
+var processUri = process.env['TARGET_URL'] || 'http://hello.default.svc.cluster.local'
 
 var timer = null
 
@@ -57,6 +57,7 @@ function getJoke() {
 
 module.exports = x => {
 
+    if (x.hasOwnProperty('url')) { processUri = x.url }	
     clearTimer();
     timer = setInterval(getJoke, 5000)
     console.log('Posting joke for processing')
