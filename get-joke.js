@@ -28,7 +28,7 @@ function postRequest(joke) {
             }
         })
         .then(function(response) {
-            console.log('HTTP POST request was successfull')
+	    console.log(`HTTP POST the joke: "${joke}" to ${processUri}`)	
             console.log(response.data);
         })
         .catch(function(response) {
@@ -44,8 +44,7 @@ function getJoke() {
             url: jokeApiUri
         })
         .then(function(response) {
-            console.log('HTTP GET request was successfull')
-            console.log('Sending to the processor function')
+            console.log('GET request results sent to the processor function')
             postRequest(response.data.value.joke)
         })
         .catch(function(response) {
@@ -57,9 +56,11 @@ function getJoke() {
 
 module.exports = x => {
 
-    if (x.hasOwnProperty('url')) { processUri = x.url }	
+   if (x.hasOwnProperty('url')) { processUri = x.url }	
     clearTimer();
+    var out = 'Posting joke for processing'
+    // every 5 second for public API safety
     timer = setInterval(getJoke, 5000)
-    console.log('Posting joke for processing')
-
+    console.log(out)
+    return out 	
 }
